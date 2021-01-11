@@ -1,0 +1,3 @@
+## solution to "Mockito cannot mock/spy because : - final class"
+## https://antonioleiva.com/mockito-2-kotlin/
+mock-maker-inline

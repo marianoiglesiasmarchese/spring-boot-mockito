@@ -1,7 +1,18 @@
 package com.example.mockito
 
+import com.nhaarman.mockito_kotlin.any
+import org.junit.Assert
 import org.junit.Test
+import org.mockito.ArgumentMatchers
 import org.mockito.Mockito
+import org.mockito.ArgumentMatchers.anyString
+
+import org.mockito.Mockito.`when`
+import org.mockito.ArgumentMatchers.anyString
+import org.mockito.ArgumentMatchers.eq
+import org.mockito.Mockito.doReturn
+import kotlin.random.Random
+
 
 class MockTest {
 
@@ -9,7 +20,7 @@ class MockTest {
     fun `should lend a book`() {
         //
         val mockBookService = Mockito.mock(BookService::class.java)
-        Mockito.`when`(mockBookService.inStock(100)).thenReturn(true)
+        `when`(mockBookService.inStock(100)).thenReturn(true)
         val manager = LendBookManager(mockBookService)
         manager.checkout(100, 1)
         Mockito.verify(mockBookService).lend(100, 1)
@@ -18,7 +29,7 @@ class MockTest {
     @Test(expected = IllegalStateException::class)
     fun `should throw IllegalStateException exception`() {
         val mockBookService = Mockito.mock(BookService::class.java)
-        Mockito.`when`(mockBookService. inStock(100)).thenReturn(false)
+        `when`(mockBookService.inStock(100)).thenReturn(false)
         val manager = LendBookManager(mockBookService)
         manager.checkout(100, 1)
     }
