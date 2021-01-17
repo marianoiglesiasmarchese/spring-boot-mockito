@@ -206,6 +206,20 @@ class RandomCasesTest {
         Assert.assertEquals(added, false)
     }
 
+    /**
+     * testing async methods
+     * https://stackoverflow.com/questions/53824465/junit-testing-an-asynchronous-method-with-mockito
+     */
+
+    /**
+     * testing methods with callbacks
+     * https://www.baeldung.com/mockito-callbacks
+     */
+
+    /**
+     * https://www.baeldung.com/mockito-verify
+     */
+
 }
 
 class MyList : AbstractMutableList<Long?>() {
